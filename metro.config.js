@@ -1,6 +1,17 @@
+// metro.config.js
 const { getDefaultConfig } = require("expo/metro-config");
 const { withNativeWind } = require("nativewind/metro");
 
-const config = getDefaultConfig(__dirname);
+const defaultConfig = getDefaultConfig(__dirname);
 
-module.exports = withNativeWind(config, { input: "./global.css" });
+// Fix: Ensure resolver config exists before modifying
+defaultConfig.resolver = {
+  ...defaultConfig.resolver,
+  sourceExts: [...defaultConfig.resolver.sourceExts, "cjs"],
+  unstable_enablePackageExports: false,
+};
+
+// Pass the updated config to NativeWind
+module.exports = withNativeWind(defaultConfig, {
+  input: "./global.css", // Ensure this file exists
+});
