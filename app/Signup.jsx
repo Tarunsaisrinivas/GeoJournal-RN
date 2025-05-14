@@ -15,7 +15,7 @@ import { useRouter } from "expo-router";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
 
-const Signup = () => {
+const signup = () => {
   const { colorScheme, toggleColorScheme } = useColorScheme();
   const router = useRouter();
 
@@ -136,14 +136,19 @@ const Signup = () => {
           <Text className="text-[#C38FFF] font-semibold">Login</Text>
         </Text>
       </TouchableOpacity>
-      <Switch
-        value={colorScheme === "dark"}
-        onValueChange={toggleColorScheme}
-      />
+      <View className="items-center mt-6">
+        <Switch
+          value={colorScheme === "dark"}
+          onValueChange={toggleColorScheme}
+        />
+        <Text className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+          {colorScheme === "dark" ? "Dark Mode" : "Light Mode"}
+        </Text>
+      </View>
     </ScrollView>
   );
 };
 
-export default Signup;
+export default signup;
 
 const styles = StyleSheet.create({});

@@ -14,10 +14,10 @@ const TabsLayout = () => {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: isDark ? "#0f172a" : "#ffffff", 
+          backgroundColor: isDark ? "#1E1E2F" : "#ffffff",
           borderTopColor: isDark ? "#1e293b" : "#e5e7eb", // dark: slate-800, light: gray-200
         },
-        tabBarActiveTintColor: isDark ? "#ffffff" : "#000000",
+        tabBarActiveTintColor: isDark ? "#C38FFF" : "#000000",
         tabBarInactiveTintColor: isDark ? "#94a3b8" : "#6b7280", // dark: slate-400, light: gray-500
       }}
     >
